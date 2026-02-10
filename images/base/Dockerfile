@@ -3,7 +3,7 @@ FROM alpine
 ENV HOME=/home/kane
 ENV XDG_CONFIG_HOME=/home/kane/.config
 
-COPY ./images/base/apk.txt /tmp/packages.txt
+COPY apk.txt /tmp/packages.txt
 RUN apk add --no-cache $(tr '\n' ' ' < /tmp/packages.txt)
 
 # Install neovim
