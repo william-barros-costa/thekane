@@ -6,16 +6,6 @@ on:
 
 env:
   REGISTRY: ghcr.io
-
-jobs:
-  name: Create and Deploy Nvim Dev Image
-
-on:
-  - push
-  - workflow_dispatch
-
-env:
-  REGISTRY: ghcr.io
   IMAGE_NAME: ${{ github.repository }}
 
 jobs:
