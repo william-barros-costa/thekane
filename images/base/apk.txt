@@ -1,0 +1,13 @@
+bash
+git
+curl
+ripgrep
+python3
+nodejs
+npm
+luarocks
+build-base
+cmake
+ninja
+gettext-dev
+pkgconf
