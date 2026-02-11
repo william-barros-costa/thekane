@@ -1,5 +1,11 @@
 FROM ghcr.io/william-barros-costa/base:latest
 
-WORKDIR /home/kane
+ARG MASON_TOOLS="yamlfmt,yamllint,gitlab-ci-ls,yq"
 
-RUN echo "3" > test.txt
+ENV PATH="/root/.cargo/bin:$PATH"
+ENV MASON_TOOLS=${MASON_TOOLS}
+
+COPY nvim $XDG_CONFIG_HOME/nvim
+
+RUN nvim --headless +Lazy! sync +qa
+RUN nvim --headless -c "MasonToolsInstallSync" -c 'qa'
