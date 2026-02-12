@@ -11,3 +11,4 @@ cmake
 ninja
 gettext-dev
 pkgconf
+lazygit
