@@ -12,3 +12,6 @@ ninja
 gettext-dev
 pkgconf
 lazygit
+tmux
+fontconfig
+procps
