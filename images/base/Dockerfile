@@ -29,9 +29,11 @@ RUN git clone https://github.com/neovim/neovim.git \
 
 WORKDIR /tmp/neovim
 
+# Install neovim
 RUN make -j 20
 RUN make install
 
+# Remove temporary files
 RUN rm -rf /tmp/FiraCode.zip /tmp/FiraCode /tmp/neovim
 
 WORKDIR $HOME
