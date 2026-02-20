@@ -1,7 +1,7 @@
 name: Create and Deploy Neovim Image
 
 on:
-  pull:
+  push:
     inputs:
       force_base:
         type: boolean
