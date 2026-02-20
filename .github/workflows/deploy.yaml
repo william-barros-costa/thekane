@@ -1,8 +1,16 @@
 name: Create and Deploy Neovim Image
 
 on:
-  - push
-  - workflow_dispatch
+  pull:
+    inputs:
+      force_base:
+        type: boolean
+        default: false
+  workflow_dispatch:
+    inputs:
+      force_base:
+        type: boolean
+        default: true
 
 env:
   REGISTRY: ghcr.io
@@ -26,7 +34,7 @@ jobs:
 
   build_base_image:
     needs: changes
-    if : ${{ needs.changes.outputs.base_changed == 'true' }}
+    if : ${{ needs.changes.outputs.base_changed == 'true' || inputs.force_base }}
     runs-on: ubuntu-latest
     permissions:
       contents: read
