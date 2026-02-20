@@ -66,7 +66,7 @@ jobs:
 
   build_neovim_image:
     needs: [changes, build_base_image]
-    if: ${{ needs.build_base_image.result == 'success' || needs.build.base_image.result == 'skipped' }}
+    if: ${{ always() && (needs.build_base_image.result == 'success' || needs.build.base_image.result == 'skipped') }}
     runs-on: ubuntu-latest
     permissions:
       contents: read
