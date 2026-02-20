@@ -65,6 +65,7 @@ jobs:
 
 
   build_neovim_image:
+    needs: build_base_image
     runs-on: ubuntu-latest
     permissions:
       contents: read
