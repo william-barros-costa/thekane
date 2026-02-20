@@ -22,7 +22,7 @@ RUN wget https://github.com/ryanoasis/nerd-fonts/releases/latest/download/FiraCo
 RUN curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh -s -- -y
 
 # Install neovim
-ARG NVIM_REF=HEAD
+ARG NVIM_REF=stable
 RUN git clone https://github.com/neovim/neovim.git \
  && cd neovim \
  && git checkout "$NVIM_REF"
