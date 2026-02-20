@@ -50,7 +50,7 @@ jobs:
         uses: docker/build-push-action@f2a1d5e99d037542a71f64918e516c093c6f3fc4
         with:
           context: .
-          dockerfile: images/base/Dockerfile
+          file: images/base/Dockerfile
           push: true
           tags: |
             ghcr.io/william-barros-costa/base:${{ github.sha }}
@@ -88,7 +88,7 @@ jobs:
         uses: docker/build-push-action@f2a1d5e99d037542a71f64918e516c093c6f3fc4
         with:
           context: .
-          dockerfile: images/neovim/Dockerfile
+          file: images/neovim/Dockerfile
           push: true
           tags: |
             ghcr.io/william-barros-costa/neovim:${{ github.sha }}
